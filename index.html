@@ -165,16 +165,16 @@
         min-height: 100svh;
         display: flex;
         align-items: center;
-        justify-content: center;
-        text-align: center;
+        justify-content: flex-start;
+        text-align: left;
         position: relative;
         overflow: hidden;
-        padding: 7rem 5% 5rem;
+        padding: 7rem 5% 5rem 8%;
       }
       .hero-bg {
         position: absolute;
-        inset: -30% 0;
-        background: url("images/inside the gym.png") center/cover no-repeat;
+        inset: -40% 0;
+        background: url("images/homeback.jpg") center/cover no-repeat;
         will-change: transform;
         z-index: 0;
       }
@@ -182,9 +182,10 @@
         position: absolute;
         inset: 0;
         background: linear-gradient(
-          180deg,
-          rgba(5, 5, 5, 0.55) 0%,
-          rgba(5, 5, 5, 0.88) 100%
+          90deg,
+          rgba(5, 5, 5, 0.95) 0%,
+          rgba(5, 5, 5, 0.5) 60%,
+          rgba(5, 5, 5, 0.2) 100%
         );
         z-index: 1;
       }
@@ -200,15 +201,15 @@
         );
         filter: blur(80px);
         top: 20%;
-        left: 50%;
-        transform: translateX(-50%);
+        right: 15%;
+        transform: translateX(50%);
         z-index: 1;
         pointer-events: none;
       }
       .hero-content {
         position: relative;
         z-index: 2;
-        max-width: 900px;
+        max-width: 650px;
       }
       .hero-tag {
         display: inline-block;
@@ -224,10 +225,10 @@
       }
       .hero h1 {
         font-family: "Bebas Neue", sans-serif;
-        font-size: clamp(3.2rem, 12vw, 7rem);
-        line-height: 0.92;
+        font-size: clamp(3.2rem, 12vw, 5.5rem);
+        line-height: 0.95;
         letter-spacing: 2px;
-        margin-bottom: 0.3rem;
+        margin-bottom: 1rem;
       }
       .hero h1 span {
         color: var(--yellow);
@@ -235,21 +236,23 @@
       }
       .hero .sub-title {
         font-family: "Bebas Neue", sans-serif;
-        font-size: clamp(1.5rem, 5vw, 2.9rem);
-        color: var(--muted);
-        letter-spacing: 4px;
-        margin-bottom: 1.3rem;
+        font-size: clamp(1.2rem, 4vw, 2.2rem);
+        color: var(--yellow);
+        letter-spacing: 3px;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
       }
       .hero p {
-        font-size: clamp(1rem, 2.4vw, 1.2rem);
-        color: #c5c5c5;
+        font-size: clamp(0.95rem, 2vw, 1.15rem);
+        color: #d0d0d0;
         max-width: 520px;
-        margin: 0 auto 2.3rem;
+        margin: 0 0 2.5rem 0;
+        line-height: 1.7;
       }
       .hero-btns {
         display: flex;
-        gap: 0.9rem;
-        justify-content: center;
+        gap: 1rem;
+        justify-content: flex-start;
         flex-wrap: wrap;
       }
       .btn {
@@ -286,7 +289,8 @@
         color: #000;
       }
       .scroll-hint {
-        margin-top: 3rem;
+        align-self: center;
+        margin-left:6rem;
         font-size: 2rem;
         font-weight: 900;
         color: var(--yellow);
@@ -815,6 +819,11 @@
         transform: scale(1.08);
       }
 
+      .marathi{
+        color: var(--yellow);
+         margin-left:1rem;
+         background: black;}
+
       /* Call float */
       .call-float {
         position: fixed;
@@ -858,10 +867,25 @@
         100% {
           box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
         }
+
       }
 
       /* Responsive */
       @media (max-width: 900px) {
+
+         .hero-bg {
+        position: absolute;
+        inset: -40% 0;
+        background: url("images/inside\ the\ gym.png") center/cover no-repeat;
+        will-change: transform;
+        z-index: 0;
+      }
+
+      .marathi{
+        color: var(--yellow);
+        font-size:0.95rem;
+         background: black;}
+
         nav ul {
           display: none;
         }
@@ -940,6 +964,16 @@
           font-weight: 500;
           text-transform: uppercase;
         }
+
+        .scroll-hint {
+        align-self: center;
+        margin-left:0;
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--yellow);
+        animation: bounce 1.8s infinite;
+      }
+
       }
     </style>
   </head>
@@ -973,18 +1007,18 @@
       <div class="hero-overlay"></div>
       <div class="hero-glow"></div>
       <div class="hero-content">
-        <div class="hero-tag">Chinchwad • Pune</div>
-        <p style="color:white; ">प्युअर मसल फिटनेस</p>
+        <span class="hero-tag">Chinchwad • Pune</span>
+        <b><span class="marathi"  "><span style="color: white;">प्युअर </span> मसल फिटनेस</span></b>
         <h1>
           Build your
           <div><span> strongest self.</span></div>
         </h1>
         <div class="sub-title">WORK HARD BE PROUD</div>
-        <p>
+        <p style="color:white">
           Bold training. Real results. K11 certified coaches. Join the strongest
           community in Chinchwad.
         </p>
-        <div class="hero-btns">
+        <span class="hero-btns">
           <a href="#trial" class="btn btn-primary">Book Free Trial</a>
           <a
             href="https://wa.me/917276544681"
@@ -992,8 +1026,8 @@
             class="btn btn-outline">
             <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
           </a>
-        </div>
-        <div class="scroll-hint">↓</div>
+          <span class="scroll-hint">↓</span>
+        </span>
       </div>
     </section>
 
@@ -1150,7 +1184,7 @@
           <div class="shade"></div>
         </div>
         <div class="gallery-item reveal">
-          <img src="images/gym logo.jpg" alt="Deadlift" loading="lazy" />
+          <img src="images/gymlogo.jpg" alt="Deadlift" loading="lazy" />
           <div class="shade"></div>
         </div>
         <div class="gallery-item reveal">
